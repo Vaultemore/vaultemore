@@ -6,13 +6,13 @@ import {ERC4626} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.so
 
 /**
     @title Registry Contract
-    @notice It represents a vault for a given underlying token. (vaVault means vaultemore vault)
+    @notice It represents a vault for a given underlying token. (VaVault means vaultemore vault)
         - Shares of that vault measured following the ERC4626 standard
         - users can deposit underlying, obtain shares
         - they can also withdraw their underlying by giving back their shares  
 */
 
-contract vaVault is ERC4626 {
+contract VaVault is ERC4626 {
     
     constructor(IERC20 asset_, string memory name_, string memory symbol_) ERC4626(asset_, name_, symbol_) {
     }
