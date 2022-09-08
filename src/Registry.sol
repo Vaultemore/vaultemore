@@ -1,14 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-import {IRegistry} from "../IRegistry.sol";
-import {Ownable} from "../utils/Ownable.sol";
+import {IRegistry} from "IRegistry.sol";
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
     @title Registry Contract
     @notice This contract is the global storage for the Vaultecore ecosystem, it stores:
         1. Active vaVault addresses
         2. A mapping of underlying tokens to the associated vaVault
+        @notice modified version of https://github.com/sentimentxyz/protocol/blob/main/src/core/Registry.sol
 */
 contract Registry is Ownable, IRegistry {
     /* -------------------------------------------------------------------------- */
