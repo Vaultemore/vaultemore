@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import {IERC20} from "@openzeppelin/contracts/interfaces/IERC20.sol";
-import {ERC4626} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
+import {ERC4626} from "CustomERC4626.sol";
 
 /**
     @title Registry Contract
