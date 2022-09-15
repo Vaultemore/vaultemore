@@ -6,11 +6,13 @@ import "forge-std/Test.sol";
 import {VaVault} from "../src/VaVault.sol";
 import {Registry} from "../src/Registry.sol";
 import {MintableERC20} from "../src/MintableERC20.sol";
+import {VLTM} from "../src/VLTM.sol";
 
 contract CounterTest is Test {
     MintableERC20 public mockDAI;
     VaVault public vaDAI;
     Registry public registry;
+    VLTM public tokenVLTM;
 
     function setUp() public {
        //create mock DAI
@@ -24,6 +26,9 @@ contract CounterTest is Test {
 
        //Add vaVault to registry
        registry.addVaVault(address(mockDAI),address(vaDAI));
+
+       //Create governance token, total Supply of 1M tokens
+       tokenVLTM = new VLTM(1_000_000e18);
     }
 
     function testCorrectSetUp() public {
@@ -31,6 +36,7 @@ contract CounterTest is Test {
         assertEq(vaDAI.symbol(), 'vaDAI');
         assertEq(MintableERC20(vaDAI.asset()).symbol(), 'DAI');
         assertEq(registry.getAllVaVaults().length, 1);
+        assertEq(tokenVLTM.totalSupply(), 1_000_000 * 10 ** 18);
     }
 
 }
