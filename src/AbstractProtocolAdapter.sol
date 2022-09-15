@@ -65,7 +65,7 @@ abstract contract AbstractProtocolAdapter is Ownable {
     /// @notice Returns an uint256 with 18 decimals of how much underlying asset one vault share represents
     function getPricePerShare(address underlying) virtual external view returns (uint256);
 
-    /// @notice abstract function, to implement by each protocolAdapter
+    /// @notice abstract function, to implement by each protocolAdapter //TODO Beware, here we should make sure that we talk in terms of shares, or in terms of underlying
     /// @notice Returns an uint256 with 18 decimals how much the vault allows to be withdrawn
 
     function availableToWithdraw(address underlying) virtual external view returns (uint256);

@@ -5,7 +5,7 @@ import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 
 /**
-    @title Registry Contract Interface
+    @title IVault Contract Interface
     @notice modified version of https://github.com/beefyfinance/beefy-contracts/blob/master/contracts/BIFI/interfaces/beefy/IVault.sol
             removed function related to the current strategy.
             added function description from VaultV7 implementation of IVault
